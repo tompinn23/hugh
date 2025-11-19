@@ -8,13 +8,15 @@ import tomlkit
 from readerwriterlock.rwlock import RWLockRead
 from tomlkit import TOMLDocument, table
 
-appname = "vase"
+import _version
+
+appname = "hugh"
 
 logger = logging.getLogger(__name__)
 
 
 def appversion() -> str:
-    return "1.0.0"
+    return _version.__version__
 
 
 SHGetKnownFolderPath = ctypes.windll.shell32.SHGetKnownFolderPath
@@ -93,20 +95,39 @@ class Config:
     def default_journal_dir(self) -> pathlib.Path:
         return self.default_journal_path
 
-    def get_str(
-        self, key: str, *, table: str | None = None, default: str | None = None
-    ) -> str:
-        return str(self.__get(table, key, default=default))
+    def get_list(self, key: str, *, section: str | None = None) -> list[Any]:
+        return self.__get(key, section=section)
 
-    def __get(self, table: str | None, key: str, *, default: str = None) -> Any:
+    def get_dict(self, key: str, *, section: str | None = None) -> dict[str, Any]:
+        return self.__get(key, section=section)
+
+    def get_str(
+        self, key: str, *, section: str | None = None, default: str | None = None
+    ) -> str:
+        return str(self.__get(key, section=section, default=default))
+
+    def __get(
+        self, key: str, *, section: str | None = None, default: str | None = None
+    ) -> Any:
         with self.lock.gen_rlock():
-            if table is None:
+            if section is None:
                 return self.config.get(key, default)
             else:
-                table = self.config.get(table, key)
-                if table is None:
+                sect = self.config.get(section)
+                if sect is None:
                     return default
-                return table.get(key, default)
+                return sect.get(key, default)
+
+    def set(self, key: str, value: Any, *, section: str | None = None) -> None:
+        with self.lock.gen_wlock():
+            if section is None:
+                self.config.set(key, value)
+            else:
+                tbl = self.config.get(section)
+                if tbl is None:
+                    tbl = table()
+                    self.config[section] = tbl
+            tbl[key] = value
 
     def add_journal(self, name: str, path: pathlib.Path) -> None:
         with self.lock.gen_wlock():

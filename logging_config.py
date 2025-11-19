@@ -55,11 +55,14 @@ class ColoredFormatter(logging.Formatter):
         )
 
 
-def setup():
-    ch = logging.StreamHandler()
-    ch.setFormatter(ColoredFormatter())
-    logging.basicConfig(level="DEBUG", handlers=[ch])
+ch = logging.StreamHandler()
+ch.setFormatter(ColoredFormatter())
+logging.basicConfig(level="INFO", handlers=[ch])
 
-    watchfiles_logger = logging.getLogger("watchfiles.main")
-    watchfiles_logger.addFilter(IgnoreRustNotify())
-    watchfiles_logger.setLevel(logging.WARNING)
+watchfiles_logger = logging.getLogger("watchfiles.main")
+watchfiles_logger.addFilter(IgnoreRustNotify())
+watchfiles_logger.setLevel(logging.WARNING)
+
+
+def setup():
+    pass

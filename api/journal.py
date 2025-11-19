@@ -1,5 +1,10 @@
 import pathlib
-from typing import Protocol
+from typing import Any, Protocol
+
+
+class CAPI(Protocol):
+    def profile(self) -> dict[str, Any]: ...
+    def fleet_carrier(self) -> dict[str, Any]: ...
 
 
 class Journal(Protocol):

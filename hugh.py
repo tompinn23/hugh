@@ -1,3 +1,6 @@
+import logging_config
+
+
 import logging
 import sys
 import tkinter as tk
@@ -6,20 +9,19 @@ from tkinter import ttk
 
 import i8ln
 from api import ConfigurableScreen, InfoScreen
+from capi import CAPIManager
 from config import Config, config
 from gui.configuration import ConfigController
 from gui.info import InfoFrame
 from journal import journals
 from plug import plug
 
-import logger as logging_config
 from worker import WorkPool
 
 if sys.platform == "win32":
     from ctypes import windll
 
     windll.shcore.SetProcessDpiAwareness(1)
-
 
 logging_config.setup()
 
@@ -40,11 +42,13 @@ def after_idle(attr=None):
 
 class App:
     config: Config
+    capi: CAPIManager
     pool: WorkPool
     cmdr_frames: dict[str, InfoFrame]
 
     def __init__(self, master: tk.Tk, config: Config):
         self.config = config
+        self.capi = CAPIManager(master, config)
         self.cmdr_frames = {}
         self.master = master
         self.pool = WorkPool()
@@ -66,26 +70,36 @@ class App:
         master.geometry("500x200")
         self.update_cmdr("unknown")
 
+        # catch any plugin errors before loading capi
+        # saves a reauth given we've burnt a refresh token
         plug.load()
         plug.on_load(config)
+        self.capi.login_saved(self.config)
 
         self._config_controller = ConfigController(
-            master, config, plug.get(ConfigurableScreen)
+            master, config, self.capi, plug.get(ConfigurableScreen)
         )
 
         plugins = plug.get(InfoScreen)
         for plugin in plugins:
             frame = ttk.Frame(self.notebook)
-            plugin.info_screen(self.notebook, frame, self.pool)
+            plugin.info_screen(self.notebook, frame)
             self.notebook.add(frame, text=plugin.name)
 
         self.master.bind_all("<<JournalEvent>>", self.journal_event)
+        self.master.protocol("WM_DELETE_WINDOW", self.on_close)
 
         journals.add_directory(
             master,
             "C:\\Users\\pooh\\Saved Games\\Frontier Developments\\Elite Dangerous",
         )
         journals.start()
+
+    def on_close(self):
+        print("closing...")
+        self.capi.save()
+        print("done")
+        self.master.destroy()
 
     def reload(self):
         plug.on_reload(self.config)
@@ -119,6 +133,8 @@ class App:
         while journals.has_entry():
             journal, entry = journals.get_entry()
             # logger.info(f"Event: {journal.cmdr} {entry}")
+            if entry is None:
+                return
 
             if entry["event"] in (
                 "LoadGame",
@@ -141,7 +157,9 @@ class App:
                     },
                 )
 
-            plug.on_journal_event(self.pool, journal, entry)
+            plug.on_journal_event(
+                self.pool, journal, self.capi.get_by_fid(journal.fid), entry
+            )
 
 
 if __name__ == "__main__":

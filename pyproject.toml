@@ -1,6 +1,6 @@
 [project]
 name = "hugh"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Add your description here"
 requires-python = ">=3.14"
 dependencies = [
@@ -13,4 +13,12 @@ dependencies = [
     "xxjson>=0.2.0",
     "httpx>=0.28.1",
     "polib>=1.2.0",
+    "jsonschema>=4.25.1",
 ]
+
+[build-system]
+requires = ["setuptools>=80", "setuptools-scm[simple]>=8", "polib"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_file = "_version.py"

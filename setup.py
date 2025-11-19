@@ -1,8 +1,10 @@
-#!/usr/bin/env python3
 import csv
 
 import polib
 import pathlib
+
+from setuptools.command.build_py import build_py as _build_py
+from setuptools import setup
 
 LOCALE_DIR = pathlib.Path("locales")
 
@@ -37,5 +39,16 @@ def compile_po():
         polib.pofile(str(po)).save_as_mofile(str(mo))
 
 
-load_csv("commodity")
-compile_po()
+class build_py(_build_py):
+    def run(self):
+        load_csv("commodity")
+        compile_po()
+        super().run()
+
+
+setup(
+    name="hugh",
+    cmdclass={
+        "build_py": build_py,
+    },
+)

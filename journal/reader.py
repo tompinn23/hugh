@@ -231,8 +231,8 @@ class PendingEvent:
             return False
         if "timestamp" not in self.file or "timestamp" not in self.journal:
             return False
-        jtime = self.journal["timestamp"]
-        ftime = self.file["timestamp"]
+        jtime: datetime = self.journal["timestamp"]
+        ftime: datetime = self.file["timestamp"]
         if jtime - ftime > timedelta(seconds=delta):
             logger.warning(
                 f"The event and file for {self.event_name} is more than {delta} seconds out"
@@ -386,6 +386,10 @@ class Journal:
         return self._state
 
     @property
+    def fid(self) -> str:
+        return self._state["FID"]
+
+    @property
     def directory(self) -> pathlib.Path:
         return self.journal_dir
 
@@ -466,6 +470,7 @@ class Journal:
                 entry = self.synthesize_startup_event()
 
                 self.event_queue.put((self, entry))
+                self.root.event_generate("<<JournalEvent>>", when="tail")
 
             else:
                 self.event_queue.put((self, None))
