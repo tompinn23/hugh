@@ -1,0 +1,4 @@
+msgid 'steel'
+msgstr 'Steel'
+msgid 'titanium'
+msgstr 'Titanium'

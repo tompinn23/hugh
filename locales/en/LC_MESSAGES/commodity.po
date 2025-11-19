@@ -1,0 +1,774 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: commodity\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "platinum"
+msgstr "Platinum"
+
+msgid "palladium"
+msgstr "Palladium"
+
+msgid "gold"
+msgstr "Gold"
+
+msgid "silver"
+msgstr "Silver"
+
+msgid "bertrandite"
+msgstr "Bertrandite"
+
+msgid "indite"
+msgstr "Indite"
+
+msgid "gallite"
+msgstr "Gallite"
+
+msgid "coltan"
+msgstr "Coltan"
+
+msgid "uraninite"
+msgstr "Uraninite"
+
+msgid "lepidolite"
+msgstr "Lepidolite"
+
+msgid "cobalt"
+msgstr "Cobalt"
+
+msgid "rutile"
+msgstr "Rutile"
+
+msgid "bauxite"
+msgstr "Bauxite"
+
+msgid "water"
+msgstr "Water"
+
+msgid "beryllium"
+msgstr "Beryllium"
+
+msgid "indium"
+msgstr "Indium"
+
+msgid "gallium"
+msgstr "Gallium"
+
+msgid "tantalum"
+msgstr "Tantalum"
+
+msgid "uranium"
+msgstr "Uranium"
+
+msgid "lithium"
+msgstr "Lithium"
+
+msgid "titanium"
+msgstr "Titanium"
+
+msgid "copper"
+msgstr "Copper"
+
+msgid "aluminium"
+msgstr "Aluminium"
+
+msgid "algae"
+msgstr "Algae"
+
+msgid "fruitandvegetables"
+msgstr "Fruit and Vegetables"
+
+msgid "grain"
+msgstr "Grain"
+
+msgid "animalmeat"
+msgstr "Animal Meat"
+
+msgid "fish"
+msgstr "Fish"
+
+msgid "foodcartridges"
+msgstr "Food Cartridges"
+
+msgid "syntheticmeat"
+msgstr "Synthetic Meat"
+
+msgid "tea"
+msgstr "Tea"
+
+msgid "coffee"
+msgstr "Coffee"
+
+msgid "leather"
+msgstr "Leather"
+
+msgid "naturalfabrics"
+msgstr "Natural Fabrics"
+
+msgid "syntheticfabrics"
+msgstr "Synthetic Fabrics"
+
+msgid "polymers"
+msgstr "Polymers"
+
+msgid "semiconductors"
+msgstr "Semiconductors"
+
+msgid "superconductors"
+msgstr "Superconductors"
+
+msgid "hydrogenfuel"
+msgstr "Hydrogen Fuel"
+
+msgid "mineraloil"
+msgstr "Mineral Oil"
+
+msgid "explosives"
+msgstr "Explosives"
+
+msgid "pesticides"
+msgstr "Pesticides"
+
+msgid "agriculturalmedicines"
+msgstr "Agri-Medicines"
+
+msgid "performanceenhancers"
+msgstr "Performance Enhancers"
+
+msgid "basicmedicines"
+msgstr "Basic Medicines"
+
+msgid "basicnarcotics"
+msgstr "Narcotics"
+
+msgid "tobacco"
+msgstr "Tobacco"
+
+msgid "beer"
+msgstr "Beer"
+
+msgid "wine"
+msgstr "Wine"
+
+msgid "liquor"
+msgstr "Liquor"
+
+msgid "powergenerators"
+msgstr "Power Generators"
+
+msgid "waterpurifiers"
+msgstr "Water Purifiers"
+
+msgid "heliostaticfurnaces"
+msgstr "Microbial Furnaces"
+
+msgid "mineralextractors"
+msgstr "Mineral Extractors"
+
+msgid "cropharvesters"
+msgstr "Crop Harvesters"
+
+msgid "marinesupplies"
+msgstr "Marine Equipment"
+
+msgid "computercomponents"
+msgstr "Computer Components"
+
+msgid "hazardousenvironmentsuits"
+msgstr "H.E. Suits"
+
+msgid "robotics"
+msgstr "Robotics"
+
+msgid "autofabricators"
+msgstr "Auto-Fabricators"
+
+msgid "animalmonitors"
+msgstr "Animal Monitors"
+
+msgid "aquaponicsystems"
+msgstr "Aquaponic Systems"
+
+msgid "advancedcatalysers"
+msgstr "Advanced Catalysers"
+
+msgid "terrainenrichmentsystems"
+msgstr "Land Enrichment Systems"
+
+msgid "personalweapons"
+msgstr "Personal Weapons"
+
+msgid "battleweapons"
+msgstr "Battle Weapons"
+
+msgid "reactivearmour"
+msgstr "Reactive Armour"
+
+msgid "nonlethalweapons"
+msgstr "Non-Lethal Weapons"
+
+msgid "domesticappliances"
+msgstr "Domestic Appliances"
+
+msgid "consumertechnology"
+msgstr "Consumer Technology"
+
+msgid "clothing"
+msgstr "Clothing"
+
+msgid "slaves"
+msgstr "Slaves"
+
+msgid "biowaste"
+msgstr "Biowaste"
+
+msgid "toxicwaste"
+msgstr "Toxic Waste"
+
+msgid "chemicalwaste"
+msgstr "Chemical Waste"
+
+msgid "scrap"
+msgstr "Scrap"
+
+msgid "progenitorcells"
+msgstr "Progenitor Cells"
+
+msgid "combatstabilisers"
+msgstr "Combat Stabilisers"
+
+msgid "resonatingseparators"
+msgstr "Resonating Separators"
+
+msgid "bioreducinglichen"
+msgstr "Bioreducing Lichen"
+
+msgid "atmosphericextractors"
+msgstr "Atmospheric Processors"
+
+msgid "drones"
+msgstr "Limpets"
+
+msgid "usscargoblackbox"
+msgstr "Black Box"
+
+msgid "usscargotradedata"
+msgstr "Trade Data"
+
+msgid "usscargomilitaryplans"
+msgstr "Military Plans"
+
+msgid "usscargoancientartefact"
+msgstr "Ancient Artefact"
+
+msgid "usscargorareartwork"
+msgstr "Rare Artwork"
+
+msgid "usscargoexperimentalchemicals"
+msgstr "Experimental Chemicals"
+
+msgid "usscargorebeltransmissions"
+msgstr "Rebel Transmissions"
+
+msgid "usscargoprototypetech"
+msgstr "Prototype Tech"
+
+msgid "usscargotechnicalblueprints"
+msgstr "Technical Blueprints"
+
+msgid "imperialslaves"
+msgstr "Imperial Slaves"
+
+msgid "unknownartifact"
+msgstr "Thargoid Sensor"
+
+msgid "airelics"
+msgstr "AI Relics"
+
+msgid "hafnium178"
+msgstr "Hafnium 178"
+
+msgid "painite"
+msgstr "Painite"
+
+msgid "antiquities"
+msgstr "Antiquities"
+
+msgid "militaryintelligence"
+msgstr "Military Intelligence"
+
+msgid "osmium"
+msgstr "Osmium"
+
+msgid "sap8corecontainer"
+msgstr "SAP 8 Core Container"
+
+msgid "trinketsoffortune"
+msgstr "Trinkets of Hidden Fortune"
+
+msgid "wreckagecomponents"
+msgstr "Wreckage Components"
+
+msgid "encripteddatastorage"
+msgstr "Encrypted Data Storage"
+
+msgid "occupiedcryopod"
+msgstr "Occupied Escape Pod"
+
+msgid "personaleffects"
+msgstr "Personal Effects"
+
+msgid "comercialsamples"
+msgstr "Commercial Samples"
+
+msgid "tacticaldata"
+msgstr "Tactical Data"
+
+msgid "assaultplans"
+msgstr "Assault Plans"
+
+msgid "encryptedcorrespondence"
+msgstr "Encrypted Correspondence"
+
+msgid "diplomaticbag"
+msgstr "Diplomatic Bag"
+
+msgid "scientificresearch"
+msgstr "Scientific Research"
+
+msgid "scientificsamples"
+msgstr "Scientific Samples"
+
+msgid "politicalprisoner"
+msgstr "Political Prisoners"
+
+msgid "hostage"
+msgstr "Hostages"
+
+msgid "largeexplorationdatacash"
+msgstr "Large Survey Data Cache"
+
+msgid "smallexplorationdatacash"
+msgstr "Small Survey Data Cache"
+
+msgid "antiquejewellery"
+msgstr "Antique Jewellery"
+
+msgid "preciousgems"
+msgstr "Precious Gems"
+
+msgid "earthrelics"
+msgstr "Earth Relics"
+
+msgid "genebank"
+msgstr "Gene Bank"
+
+msgid "timecapsule"
+msgstr "Time Capsule"
+
+msgid "cryolite"
+msgstr "Cryolite"
+
+msgid "goslarite"
+msgstr "Goslarite"
+
+msgid "moissanite"
+msgstr "Moissanite"
+
+msgid "pyrophyllite"
+msgstr "Pyrophyllite"
+
+msgid "lanthanum"
+msgstr "Lanthanum"
+
+msgid "thallium"
+msgstr "Thallium"
+
+msgid "bismuth"
+msgstr "Bismuth"
+
+msgid "thorium"
+msgstr "Thorium"
+
+msgid "ceramiccomposites"
+msgstr "Ceramic Composites"
+
+msgid "syntheticreagents"
+msgstr "Synthetic Reagents"
+
+msgid "nerveagents"
+msgstr "Nerve Agents"
+
+msgid "surfacestabilisers"
+msgstr "Surface Stabilisers"
+
+msgid "bootlegliquor"
+msgstr "Bootleg Liquor"
+
+msgid "geologicalequipment"
+msgstr "Geological Equipment"
+
+msgid "thermalcoolingunits"
+msgstr "Thermal Cooling Units"
+
+msgid "buildingfabricators"
+msgstr "Building Fabricators"
+
+msgid "mutomimager"
+msgstr "Muon Imager"
+
+msgid "structuralregulators"
+msgstr "Structural Regulators"
+
+msgid "landmines"
+msgstr "Landmines"
+
+msgid "skimercomponents"
+msgstr "Skimmer Components"
+
+msgid "evacuationshelter"
+msgstr "Evacuation Shelter"
+
+msgid "geologicalsamples"
+msgstr "Geological Samples"
+
+msgid "metaalloys"
+msgstr "Meta-Alloys"
+
+msgid "taaffeite"
+msgstr "Taaffeite"
+
+msgid "jadeite"
+msgstr "Jadeite"
+
+msgid "unstabledatacore"
+msgstr "Unstable Data Core"
+
+msgid "damagedescapepod"
+msgstr "Damaged Escape Pod"
+
+msgid "praseodymium"
+msgstr "Praseodymium"
+
+msgid "bromellite"
+msgstr "Bromellite"
+
+msgid "samarium"
+msgstr "Samarium"
+
+msgid "lowtemperaturediamond"
+msgstr "Low Temperature Diamonds"
+
+msgid "hydrogenperoxide"
+msgstr "Hydrogen Peroxide"
+
+msgid "liquidoxygen"
+msgstr "Liquid oxygen"
+
+msgid "methanolmonohydratecrystals"
+msgstr "Methanol Monohydrate Crystals"
+
+msgid "lithiumhydroxide"
+msgstr "Lithium Hydroxide"
+
+msgid "methaneclathrate"
+msgstr "Methane Clathrate"
+
+msgid "insulatingmembrane"
+msgstr "Insulating Membrane"
+
+msgid "cmmcomposite"
+msgstr "CMM Composite"
+
+msgid "coolinghoses"
+msgstr "Micro-weave Cooling Hoses"
+
+msgid "neofabricinsulation"
+msgstr "Neofabric Insulation"
+
+msgid "articulationmotors"
+msgstr "Articulation Motors"
+
+msgid "hnshockmount"
+msgstr "HN Shock Mount"
+
+msgid "emergencypowercells"
+msgstr "Emergency Power Cells"
+
+msgid "powerconverter"
+msgstr "Power Converter"
+
+msgid "powergridassembly"
+msgstr "Energy Grid Assembly"
+
+msgid "powertransferconduits"
+msgstr "Power Transfer Bus"
+
+msgid "radiationbaffle"
+msgstr "Radiation Baffle"
+
+msgid "exhaustmanifold"
+msgstr "Exhaust Manifold"
+
+msgid "reinforcedmountingplate"
+msgstr "Reinforced Mounting Plate"
+
+msgid "heatsinkinterlink"
+msgstr "Heatsink Interlink"
+
+msgid "magneticemittercoil"
+msgstr "Magnetic Emitter Coil"
+
+msgid "modularterminals"
+msgstr "Modular Terminals"
+
+msgid "nanobreakers"
+msgstr "Nanobreakers"
+
+msgid "telemetrysuite"
+msgstr "Telemetry Suite"
+
+msgid "microcontrollers"
+msgstr "Micro Controllers"
+
+msgid "iondistributor"
+msgstr "Ion Distributor"
+
+msgid "diagnosticsensor"
+msgstr "Hardware Diagnostic Sensor"
+
+msgid "unknownartifact2"
+msgstr "Thargoid Probe"
+
+msgid "conductivefabrics"
+msgstr "Conductive Fabrics"
+
+msgid "militarygradefabrics"
+msgstr "Military Grade Fabrics"
+
+msgid "advancedmedicines"
+msgstr "Advanced Medicines"
+
+msgid "medicaldiagnosticequipment"
+msgstr "Medical Diagnostic Equipment"
+
+msgid "survivalequipment"
+msgstr "Survival Equipment"
+
+msgid "datacore"
+msgstr "Data Core"
+
+msgid "mysteriousidol"
+msgstr "Mysterious Idol"
+
+msgid "prohibitedresearchmaterials"
+msgstr "Prohibited Research Materials"
+
+msgid "antimattercontainmentunit"
+msgstr "Antimatter Containment Unit"
+
+msgid "spacepioneerrelics"
+msgstr "Space Pioneer Relics"
+
+msgid "fossilremnants"
+msgstr "Fossil Remnants"
+
+msgid "ancientrelic"
+msgstr "Guardian Relic"
+
+msgid "ancientorb"
+msgstr "Guardian Orb"
+
+msgid "ancientcasket"
+msgstr "Guardian Casket"
+
+msgid "ancienttablet"
+msgstr "Guardian Tablet"
+
+msgid "ancienturn"
+msgstr "Guardian Urn"
+
+msgid "ancienttotem"
+msgstr "Guardian Totem"
+
+msgid "unknownresin"
+msgstr "Thargoid Resin"
+
+msgid "unknownbiologicalmatter"
+msgstr "Thargoid Biological Matter"
+
+msgid "unknowntechnologysamples"
+msgstr "Thargoid Technology Samples"
+
+msgid "unknownartifact3"
+msgstr "Thargoid Link"
+
+msgid "thargoidheart"
+msgstr "Thargoid Heart"
+
+msgid "thargoidtissuesampletype1"
+msgstr "Thargoid Cyclops Tissue Sample"
+
+msgid "thargoidtissuesampletype2"
+msgstr "Thargoid Basilisk Tissue Sample"
+
+msgid "thargoidtissuesampletype3"
+msgstr "Thargoid Medusa Tissue Sample"
+
+msgid "thargoidscouttissuesample"
+msgstr "Thargoid Scout Tissue Sample"
+
+msgid "ancientkey"
+msgstr "Ancient Key"
+
+msgid "thargoidtissuesampletype4"
+msgstr "Thargoid Hydra Tissue Sample"
+
+msgid "m_tissuesample_fluid"
+msgstr "Mollusc Fluid"
+
+msgid "m_tissuesample_soft"
+msgstr "Mollusc Soft Tissue"
+
+msgid "m_tissuesample_nerves"
+msgstr "Mollusc Brain Tissue"
+
+msgid "s_tissuesample_cells"
+msgstr "Pod Core Tissue"
+
+msgid "s_tissuesample_surface"
+msgstr "Pod Dead Tissue"
+
+msgid "s_tissuesample_core"
+msgstr "Pod Surface Tissue"
+
+msgid "p_particulatesample"
+msgstr "Anomaly Particles"
+
+msgid "s9_tissuesample_shell"
+msgstr "Pod Tissue"
+
+msgid "m3_tissuesample_membrane"
+msgstr "Mollusc Membrane"
+
+msgid "m3_tissuesample_mycelium"
+msgstr "Mollusc Mycelium"
+
+msgid "m3_tissuesample_spores"
+msgstr "Mollusc Spores"
+
+msgid "s6_tissuesample_mesoglea"
+msgstr "Pod Mesoglea"
+
+msgid "s6_tissuesample_cells"
+msgstr "Pod Outer Tissue"
+
+msgid "s6_tissuesample_coenosarc"
+msgstr "Pod Shell Tissue"
+
+msgid "rhodplumsite"
+msgstr "Rhodplumsite"
+
+msgid "serendibite"
+msgstr "Serendibite"
+
+msgid "monazite"
+msgstr "Monazite"
+
+msgid "musgravite"
+msgstr "Musgravite"
+
+msgid "benitoite"
+msgstr "Benitoite"
+
+msgid "grandidierite"
+msgstr "Grandidierite"
+
+msgid "alexandrite"
+msgstr "Alexandrite"
+
+msgid "opal"
+msgstr "Void Opal"
+
+msgid "rockforthfertiliser"
+msgstr "Rockforth Fertiliser"
+
+msgid "agronomictreatment"
+msgstr "Agronomic Treatment"
+
+msgid "tritium"
+msgstr "Tritium"
+
+msgid "onionheadc"
+msgstr "Onionhead Gamma Strain"
+
+msgid "ancientrelictg"
+msgstr "Unclassified Relic"
+
+msgid "thargoidtissuesampletype5"
+msgstr "Thargoid Orthrus Tissue Sample"
+
+msgid "thargoidgeneratortissuesample"
+msgstr "Caustic Tissue Sample"
+
+msgid "unocuppiedescapepod"
+msgstr "Unoccupied Escape Pod"
+
+msgid "thargoidtissuesampletype6"
+msgstr "Thargoid Glaive Tissue Sample"
+
+msgid "thargoidtissuesampletype7"
+msgstr "Thargoid Scythe Tissue Sample"
+
+msgid "thargoidtissuesampletype9a"
+msgstr "Titan Deep Tissue Sample"
+
+msgid "thargoidtissuesampletype9b"
+msgstr "Titan Tissue Sample"
+
+msgid "thargoidtissuesampletype9c"
+msgstr "Titan Partial Tissue Sample"
+
+msgid "thargoidtissuesampletype10a"
+msgstr "Titan Maw Deep Tissue Sample"
+
+msgid "thargoidtissuesampletype10b"
+msgstr "Titan Maw Tissue Sample"
+
+msgid "thargoidtissuesampletype10c"
+msgstr "Titan Maw Partial Tissue Sample"
+
+msgid "unknownsack"
+msgstr "Protective Membrane Scrap"
+
+msgid "thargoidpod"
+msgstr "Xenobiological Prison Pod"
+
+msgid "coralsap"
+msgstr "Coral Sap"
+
+msgid "unknownmineral"
+msgstr "Impure Spire Mineral"
+
+msgid "unknownrefinedmineral"
+msgstr "Semi-Refined Spire Mineral"
+
+msgid "thargoidtitandrivecomponent"
+msgstr "Titan Drive Component"
+
+msgid "thargoidcystspecimen"
+msgstr "Cyst Specimen"
+
+msgid "thargoidbonefragments"
+msgstr "Bone Fragments"
+
+msgid "thargoidorgansample"
+msgstr "Organ Sample"
+
+msgid "steel"
+msgstr "Steel"
+
+msgid "haematite"
+msgstr "Haematite"
