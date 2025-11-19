@@ -8,7 +8,7 @@ from typing import Any, MutableMapping, Type, TypeVar
 
 import internal
 from api import Journal
-from api.plugin import Plugin
+from api.plugin import Plugin, WorkPool
 from config import Config
 
 _T = TypeVar("_T")
@@ -65,12 +65,12 @@ class Loader:
                 logger.error(f"Plugin {plugin.name} failed to reload")
 
     def on_journal_event(
-        self, journal: Journal, entry: MutableMapping[str, Any] | None
+        self, pool: WorkPool, journal: Journal, entry: MutableMapping[str, Any] | None
     ):
         errors = []
         for plugin in self.loaded:
             try:
-                plugin.journal_event(journal, entry)
+                plugin.journal_event(pool, journal, entry)
             except Exception as e:
                 errors.append(e)
         if errors:

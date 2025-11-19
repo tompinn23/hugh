@@ -13,6 +13,7 @@ from journal import journals
 from plug import plug
 
 import logger as logging_config
+from worker import WorkPool
 
 if sys.platform == "win32":
     from ctypes import windll
@@ -39,13 +40,14 @@ def after_idle(attr=None):
 
 class App:
     config: Config
+    pool: WorkPool
     cmdr_frames: dict[str, InfoFrame]
 
     def __init__(self, master: tk.Tk, config: Config):
         self.config = config
         self.cmdr_frames = {}
-
         self.master = master
+        self.pool = WorkPool()
         self.menubar = tk.Menu(master)
 
         config_menu = tk.Menu(self.menubar, tearoff=0)
@@ -74,7 +76,7 @@ class App:
         plugins = plug.get(InfoScreen)
         for plugin in plugins:
             frame = ttk.Frame(self.notebook)
-            plugin.info_screen(self.notebook, frame)
+            plugin.info_screen(self.notebook, frame, self.pool)
             self.notebook.add(frame, text=plugin.name)
 
         self.master.bind_all("<<JournalEvent>>", self.journal_event)
@@ -139,7 +141,7 @@ class App:
                     },
                 )
 
-            plug.on_journal_event(journal, entry)
+            plug.on_journal_event(self.pool, journal, entry)
 
 
 if __name__ == "__main__":

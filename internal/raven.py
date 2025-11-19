@@ -1,25 +1,35 @@
+import logging
+import re
 import tkinter as tk
 import webbrowser
+from collections import defaultdict
 from tkinter import ttk
 from typing import Any, MutableMapping
 
 from api import Config, Journal
 from api.gui import ScrollableLabelFrame
-from api.plugin import Plugin
+from api.plugin import Plugin, WorkPool
 
 from i8ln import _C
 
 import httpx
 
+logger = logging.getLogger()
 
 class RavenPlugin(Plugin):
+
+    _RE_COMMODITY = re.compile(R"(?:\$|)([a-zA-Z]+)(?:_name;|)")
+
     config: Config
-    base_url: str
-    projects: dict[str, dict]
-    active: dict[str, Any]
-    username: str
-    api_key: str
+    base_url: str = ""
+    projects: dict[str, dict] = {}
+    active: dict[str, Any] = {}
+    username: str = ""
+    api_key: str = ""
     delivery: ScrollableLabelFrame
+
+    market_id: int = 0
+    market_updates: dict[str, int] = defaultdict(lambda: 0)
 
     @property
     def name(self) -> str:
@@ -44,11 +54,22 @@ class RavenPlugin(Plugin):
 
     @staticmethod
     def commodity(name: str) -> str:
-        return name[1:-6].lower()
+        return RavenPlugin._RE_COMMODITY.fullmatch(name).group(1)
 
-    def journal_event(self, journal: Journal, entry: MutableMapping[str, Any] | None):
+    def update_fc(self):
+        logger.debug(f"Updating fleet carrier {self.market_id} with {self.market_updates}")
+        res = httpx.patch(f"{self.base_url}/api/fc/{self.market_id}/cargo", json=self.market_updates)
+        if res.status_code != 200:
+            logger.error(f"Failed to update commodities for fleet carrier {res.text}")
+        self.market_updates.clear()
+
+    def journal_event(self, pool: WorkPool, journal: Journal, entry: MutableMapping[str, Any] | None):
         if entry is None:
             return
+
+        if self.market_updates and entry["event"] not in ("MarketSell", "MarketBuy"):
+            self.update_fc()
+            self.market_id = 0
 
         if entry["event"] == "ColonisationContribution":
             contributions = {}
@@ -57,11 +78,35 @@ class RavenPlugin(Plugin):
                 amount = x["Amount"]
                 contributions[name] = amount
                 self.active["commodities"][name] -= amount
+
             httpx.post(
                 f"{self.base_url}/api/project/{self.active['buildId']}/contribute/{journal.cmdr}",
                 json=contributions,
             )
             self.update_required()
+
+        if entry["event"] == "MarketSell":
+            market = entry["MarketID"]
+            if market != self.market_id:
+                self.update_fc()
+                self.market_id = market
+
+
+            name = self.commodity(entry["Type"])
+            amount = entry["Count"]
+            self.market_updates[name] += amount
+
+        if entry["event"] == "MarketBuy":
+            market = entry["MarketID"]
+            if market != self.market_id:
+                self.update_fc()
+                self.market_id = market
+
+            name = self.commodity(entry["Type"])
+            amount = entry["Count"]
+            self.market_updates[name] -= amount
+
+
 
     def update_required(self):
         for widget in self.delivery.inner.winfo_children():
@@ -74,7 +119,7 @@ class RavenPlugin(Plugin):
                     anchor="w", pady=2
                 )
 
-    def info_screen(self, notebook: ttk.Notebook, frame: tk.Frame):
+    def info_screen(self, notebook: ttk.Notebook, frame: tk.Frame, pool: WorkPool):
         frame.grid_rowconfigure(1, weight=1)
         frame.grid_columnconfigure(0, weight=1)
         frame.grid_columnconfigure(1, weight=1)
